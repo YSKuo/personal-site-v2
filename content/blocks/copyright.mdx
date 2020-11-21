@@ -4,7 +4,10 @@ export const Copyright = ({ ...props }) => {
   const { title } = useSiteMetadata()
   return (
     <P fontSize="sm" {...props}>
-      © {new Date().getFullYear()} {title}
+      {
+        new Date().getFullYear() === 2020 ? new Date().getFullYear() : `2020 - ${new Date().getFullYear()}`
+      }
+      {new Date().getFullYear()} {title}
     </P>
   )
 }

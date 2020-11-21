@@ -1,5 +1,66 @@
-<Footer py="6">
-  <Container mt="20" textAlign="center">
-    <Block src="copyright" />
-  </Container>
-</Footer>
+import { useSiteMetadata } from "@reflexjs/gatsby-theme-core"
+
+export const FooterBlock = () => {
+  const { title } = useSiteMetadata()
+  return (
+    <Section py={[8, 10, 12]}>
+      <Container>
+        <Flexbox
+          flexDirection={["column", "row"]}
+          alignItems={["flex-start", "center"]}
+          justifyContent="space-between"
+        >
+          <H2 m="0" fontSize="xl|2xl|3xl">
+            {title}
+          </H2>
+          <NavMenu
+            name="footer-example"
+            dropdown={false}
+            expand={false}
+            my="6|0"
+            gap="4|8"
+          />
+          <Grid col="4" gap="4" mt={[4, 0]}>
+            <A href="https://github.com/YSKuo" color="text">
+              <Icon name="github" size={5} />
+              <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+            </A>
+            <A href="https://www.instagram.com/arsene_alibi/" color="text">
+              <Icon name="instagram" size={5} />
+              <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+            </A>
+            <A href="https://twitter.com/ArseneKuo" color="text">
+              <Icon name="twitter" size={5} />
+              <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+            </A>
+            <A href="https://www.linkedin.com/in/yanshengkuo/" color="text">
+              <Icon name="linkedin" size={5} />
+              <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+            </A>
+          </Grid>
+        </Flexbox>
+        <Div
+          borderTopWidth={1}
+          textAlign="center"
+          pt={[4, 5, 6]}
+          mt={[4, 5, 6]}
+        >
+        <Flexbox
+          flexDirection={["column", "row"]}
+          alignItems={["center"]}
+          justifyContent="space-between"
+        >
+          <P fontSize="sm" mt="0">
+            © {
+              new Date().getFullYear() === 2020 ? new Date().getFullYear() : `2020 - ${new Date().getFullYear()}`
+            } Made by {title}
+          </P>
+          {null && <P fontSize="sm" mt="0">
+            Download <A href="#">Resume</A>
+          </P>}
+        </Flexbox>
+        </Div>
+      </Container>
+    </Section>
+  )
+}

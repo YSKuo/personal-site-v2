@@ -1,0 +1,55 @@
+import * as React from "react"
+import { Article, H2, P, Div, Grid } from "@reflexjs/components"
+import { Link } from "@reflexjs/gatsby-theme-core"
+import { Image } from "@reflexjs/gatsby-plugin-image"
+import { PostMeta } from "@reflexjs/gatsby-theme-post"
+
+export const Posts = ({ posts }) => {
+  return posts.length ? (
+    <Grid col="1" gap="10|20" maxW="800px" mx="auto">
+      {posts &&
+        posts.map((post, index) => (
+          <Div key={index}>
+            <PostTeaser {...post} />
+          </Div>
+        ))}
+    </Grid>
+  ) : null
+}
+
+export const PostTeaser = ({
+  title,
+  excerpt,
+  slug,
+  image,
+  date,
+  datetime,
+  author,
+  timeToRead,
+  ...props
+}) => (
+  <Article {...props}>
+    <Div mt="4">
+      {title && (
+        <Link href={slug}>
+          <H2 mt="0" mb="4" fontSize="2xl|2xl|3xl|4xl" hoverColor="primary">
+            {title}
+          </H2>
+        </Link>
+      )}
+      <PostMeta
+        author={author}
+        timeToRead={timeToRead}
+        date={date}
+        datetime={datetime}
+        fontSize="md"
+      />
+      {image && (
+        <Link href={slug} d="block" mt="4">
+          <Image src={image} title={title} alt={title} />
+        </Link>
+      )}
+      {excerpt && <P mt="4">{excerpt}</P>}
+    </Div>
+  </Article>
+)

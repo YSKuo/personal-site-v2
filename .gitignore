@@ -71,6 +71,6 @@ yarn-error.log
 .netlify/
 
 # posts
-posts/draft/
-posts/examples/
-posts/template/
+content/posts/draft/
+content/posts/examples/
+content/posts/template/

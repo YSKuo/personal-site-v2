@@ -53,11 +53,13 @@ export const Post = ({
       <Container variant="lg">
         <Image
           src={image}
+          width="100%"
+          height="auto"
           title={title}
           alt={caption || title}
           caption={caption}
           mx="auto"
-          my="4|8|10"
+          my="2|4|6"
           overflow="hidden"
           sx={{
             img: {

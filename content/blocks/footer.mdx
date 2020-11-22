@@ -1,7 +1,7 @@
 import { useSiteMetadata } from "@reflexjs/gatsby-theme-core"
 
 export const FooterBlock = () => {
-  const { title } = useSiteMetadata()
+  const { title, mail } = useSiteMetadata()
   return (
     <Section py={[8, 10, 12]}>
       <Container>
@@ -10,16 +10,14 @@ export const FooterBlock = () => {
           alignItems={["flex-start", "center"]}
           justifyContent="space-between"
         >
+          <Div>
           <H2 m="0" fontSize="xl|2xl|3xl">
             {title}
           </H2>
-          <NavMenu
-            name="footer-example"
-            dropdown={false}
-            expand={false}
-            my="6|0"
-            gap="4|8"
-          />
+          <A href="mailto:crowley3141@hotmail.com" m="0" fontSize="sm">
+            crowley3141@hotmail.com
+          </A>
+          </Div>
           <Grid col="4" gap="4" mt={[4, 0]}>
             <A href="https://github.com/YSKuo" color="text">
               <Icon name="github" size={5} />

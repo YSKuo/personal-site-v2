@@ -46,7 +46,13 @@ export const PostTeaser = ({
       />
       {image && (
         <Link href={slug} d="block" mt="4">
-          <Image src={image} title={title} alt={title} />
+          <Image 
+            src={image} 
+            title={title} 
+            alt={title} 
+            width="100%"
+            height="auto"
+          />
         </Link>
       )}
       {excerpt && <P mt="4">{excerpt}</P>}

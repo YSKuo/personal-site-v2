@@ -3,45 +3,65 @@ title: About page
 excerpt: This is about page.
 ---
 
-<Block 
-  src="hero" 
-  bg="muted"
-  heading="I am Arsene"
-  desc="Welcome to my personal website."
-  img="portrait.jpg"
-/>
+<Section py="8|12|16|24">
+  <Container>
+    <Grid col="1|2" gap="8|12|16" alignItems="center">
+      <Image
+        src="portrait.jpg"
+        colStart="null|2"
+        w="full"
+        rounded="lg"
+        overflow="hidden"
+      />
+      <Flexbox
+        flexDirection="column"
+        alignItems="center|flex-start"
+        textAlign="center|left"
+      >
+        <P>Hello!</P>
+        <H1 m="0" fontWeight="extrabold" lineHeight="tight">
+          I am Arsene
+        </H1>
+        <P fontSize="md" mt="2">
+          Welcome to my personal website. I built this to share my thoughts and showcase my projects.
+        </P>
+        {null && <ButtonLink href="#" variant="primary lg">
+          Resume
+          <Icon name="download" ml="4" />
+        </ButtonLink>}
+      </Flexbox>
+    </Grid>
+  </Container>
+</Section>
 
-<Container
-  borderTopWidth={1}
->
+
+<Block src="about/block">
   <H2>About Me</H2>
   <P>
     Hi, there! I'm <B>Arsene Kuo</B>, a frontend designer and developer living in Taipei, Taiwan. 
-    After I finished my master's degree in Mechanical Engineering,
-    I worked in manufacture industry and patent firm for years.
+    After finishing my master's degree in mechanical engineering, 
+    I acquired extensive experience in a patent firm and also the high-tech manufacturing industry.
   </P>
   <P>
-    With an understanding of user-centered methodologies from my experience in solving manufacture problems, 
+    Gaining a glimpse of user-centered methodologies from my experience in the manufacturing industry, 
     I am eager to encourage interactions among people through digital products. 
-    Therefore, I've worked hard to learn and improve my design and coding skill, which allow me to create websites that are intuitive and aesthetically balanced.
+    Therefore, I've worked hard to improve my coding and design skills, which allow me to create websites that are intuitive and aesthetically balanced.
   </P>
   <P>
-    In my spare time, I like to relieve myself with <B>music</B>,
+    In my spare time, I like to indulge myself in <B>music</B>,
     broaden my horizons with <B>travel</B>, 
-    document my journey by <B>photograph</B>,
+    document my journey by <B>photographs</B>,
     cultivate my taste in <B>denim</B> and <B>heritage menswear</B>,
-    and feed my imagination of impossibility with <B>video games</B> and <B>films</B>.
+    and feed my imagination of impossibilities with <B>video games</B> and <B>films</B>.
   </P>
   <P>
     <B>
       You may also know more about me through my <A href="https://www.linkedin.com/in/yanshengkuo/">LinkedIn</A> or <A href="https://www.instagram.com/arsene_alibi/">Instagram!</A>
     </B>
   </P>
-</Container>
+</Block>
 
-<Container
-  borderTopWidth={1}
->
+<Block src="about/block">
   <H2>Skills</H2>
   <Flexbox 
     alignItems="flex-start" my="6" mx="auto"
@@ -59,11 +79,11 @@ excerpt: This is about page.
       <Ul px="1">
         <Block src="tag" text="HTML" />
         <Block src="tag" text="CSS" />
-        <Block src="tag" text="PHP" />
         <Block src="tag" text="JavaScript" />
         <Block src="tag" text="jQuery" />
         <Block src="tag" text="React" />
         <Block src="tag" text="Redux" />
+        <Block src="tag" text="PHP" />
       </Ul>
     </Div>
   </Flexbox>
@@ -79,4 +99,4 @@ excerpt: This is about page.
       </Ul>
     </Div>
   </Flexbox>
-</Container>
+</Block>

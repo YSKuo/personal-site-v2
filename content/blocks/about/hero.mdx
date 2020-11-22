@@ -1,8 +1,8 @@
-export const Hero = ({ 
+export const AboutHero = ({ 
   textAboveHeading = 'Hello!',
   heading = 'Heading', 
   desc = 'Desc', 
-  img, href, linkText = 'link text' }) => (
+  img, href, linkText = 'link text', children }) => (
   <Section py="8|12|16|24">
     <Container>
       <Grid col={img && "1|2"} gap="8|12|16" alignItems="center">
@@ -24,9 +24,7 @@ export const Hero = ({
           <H1 m="0" fontWeight="extrabold" lineHeight="tight">
             {heading}
           </H1>
-          <P fontSize="xl|2xl" mt="2">
-            {desc}
-          </P>
+          {children}
           {href && (
             <ButtonLink href={href} variant="primary lg">
               {linkText}

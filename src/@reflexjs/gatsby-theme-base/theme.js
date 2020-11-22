@@ -29,7 +29,6 @@ export default {
     heading: 'Inherit',
     monospace: "Menlo, monospace",
   },
-  fontSizes: [12, 14, 16, 18, 20, 22, 36, 56, 72],
   fontWeights: {
     body: 400,
     heading: 700,

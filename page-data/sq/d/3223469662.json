@@ -1,0 +1,1 @@
+{"data":{"allNav":{"nodes":[{"__typename":"MdxNav","name":"header","items":[{"type":"link","value":"Home","url":"/","items":null},{"type":"link","value":"About","url":"/about","items":null},{"type":"link","value":"Blog","url":"/blog","items":null}],"data":{"title":"","rawBody":"- [Home](/)\n- [About](/about)\n- [Blog](/blog)\n"}}]}}}

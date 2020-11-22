@@ -2,7 +2,6 @@ require(`dotenv`).config()
 const { toSlug } = require("@reflexjs/gatsby-helpers") 
 
 module.exports = {
-  pathPrefix: "/site",
   siteMetadata: {
     title: "Arsene Kuo",
     description: "Arsene's Personal Website.",

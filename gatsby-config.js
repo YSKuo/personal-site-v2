@@ -1,6 +1,4 @@
-require(`dotenv`).config({
-  path: `.env.${process.env.NODE_ENV}`
-})
+require(`dotenv`).config()
 const { toSlug } = require("@reflexjs/gatsby-helpers") 
 
 module.exports = {

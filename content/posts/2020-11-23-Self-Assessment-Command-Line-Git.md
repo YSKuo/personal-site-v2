@@ -1,0 +1,180 @@
+---
+title: 菜雞自評 - Command Line & Git
+excerpt: 求職前的自我評估，這篇是審視 Command Line 與 Git 的了解。
+date: 2020-11-23
+image: https://images.unsplash.com/photo-1524741978410-350ba91a70d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+caption:
+published: true
+featured: false
+tags:
+  - Mandarin
+  - Self-Assessment
+metatags:
+  title: 菜雞自評 - Command Line & Git
+  description: 求職前的自我評估，這篇是審視 Command Line 與 Git 的了解。
+  og:
+    title: Self Assessment: Command Line & Git.
+    description: Review my learning of Command Line and Git before entering the workforce.
+    image: https://images.unsplash.com/photo-1524741978410-350ba91a70d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+    type: article
+  twitter:
+    title: Self Assessment: Command Line & Git.
+    description: Review my learning of Command Line and Git before entering the workforce.
+    image: https://images.unsplash.com/photo-1524741978410-350ba91a70d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+    card: 
+---
+
+## 前言
+
+這是菜雞自評第一篇，今年六月開始跟著 [Lidemy 程式導師實驗計畫第四期](https://github.com/Lidemy/mentor-program-4th) 學習，現在已經到尾聲了，而我參加此計畫的目的就是為了轉職為工程師，所以自覺應該在求職前複習以及評估自己的學習，因此才有這一系列文。
+
+評估的方式基本上是依照計畫的 **自我檢測**：
+
+- P1 你說得出程式如何執行
+- P1 你理解寫程式的本質只是一行行的指令
+- P1 你了解前端與後端的區別
+- P1 你能說出從發出一個 request 到接收 response 中間發生的事
+- P1 你了解不同載具的差異在哪（Desktop、Mobile、Web）
+- P1 你了解基本的 command line 指令
+- P1 你知道 Git 在做什麼，以及為何我們需要 Git
+- P1 你知道 add、commit、push、pull 等基本 Git 指令
+- P1 你知道怎麼使用 branch 並送出 Pull Request
+- P2 你熟悉 Git Workflow（其實就是交作業的流程）
+
+## 程式的基礎
+
+程式基本上就是一行行指令在執行的，其實生活上許多大大小小的事情也可以拆解成一個個指令（動作）。
+
+例如早上起床出門前的準備，就是許多動作組合起來的：
+
+- 起身
+- 刷牙
+- 洗臉
+- 換衣服
+- 出門
+
+而程式也是這樣一行行執行的，以一個線上抽獎功能為例，如果有十個號碼要抽出三個出來，大概有以下的動作
+
+```
+const box = []; // 定義一個空的得獎桶
+while (box.length < 3) { // 桶中的號碼數量小於三個時就抽號碼
+  const num = Math.ceil(Math.random() * 10); // 1 到 10 之間抽個號碼
+  if (box.indexOf(num) < 0) { // 如果抽起來的號碼不在桶子裡就放進桶子
+    box.push(num);
+  }
+}
+alert(box) // 公布得獎號碼
+```
+
+## 前端與後端的區別
+
+以網頁前後端說明，使用者在瀏覽網頁時，畫面的呈現或是互動功能等都是前端的範疇，另外還有 API 的串接；後端則負責處理資料庫以及伺服器。
+
+舉個例子，使用者填寫一個 Google 表單，表單的畫面形式（包括欄位或按鈕長怎樣）、必填欄位沒填寫出現的警示、欄位資料的格式限定等都是前端負責；而使用者按下確認鈕發送資料後，讓系統加入使用者填入的資料，就是後端負責的。
+
+（講得這麼簡單會不會被戰？
+
+## request <-> response
+
+以 `在網址列輸入 google.com` 為例，會有以下步驟
+
+1. 使用者在 browser 上發送指令（透過 OS -> 網卡 -> 數據機）
+2. browser 問 DNS 的（google.com）的 IP 位址
+3. DNS 回給 browser 所需的 IP 位址
+4. browser 發送 `request`（我需要 google.com 的頁面）到該 IP 位址
+5. 位於該 IP 位址的 server 收到 `request`
+6. server 向 database 詢問所需資料
+7. database 找到所需資料（HTML, CSS, JavaScript files）並複製一份給 server
+8. server 回傳 `response`（給你 google.com 的頁面）給 browser
+9. browser 解析資訊（HTML, CSS, JS files）並顯示出來
+
+## 基礎 command line
+
+Command line 是以文字指令的方式操作電腦來執行各種任務，列出一些我最常用的指令，不特別說明用法了。
+
+- pwd
+  - 印出當前位置
+- ls
+  - 印出所有檔案
+- cd
+  - 移動工作位置
+- man
+  - 看指令說明書
+- clear
+  - 清除畫面
+- open
+  - 開啟檔案或資料夾
+- touch
+  - 建立檔案或更改時間
+- rm
+  - 刪除檔案或資料夾
+  - 會永久刪除檔案，要小心使用。
+- mkdir
+  - 建立新資料夾
+- mv
+  - 移動檔案
+- cp
+  - 複製檔案
+
+此外還有一些我知道的指令但自己一直不常使用的，像是 vim, grep, wget, exit, curl, nslookup, ping, telnet，還有 redirection `>` 和 pipe `|`。
+
+## Git
+
+簡單來說，Git 就是用來做版本控制的工具。
+
+### 為什麼需要使用版本控制呢？
+
+以一個例子來說明沒做版本控制會遇到的問題：
+
+工作上常會遇到的情況是某個產品有 A 和 B 兩位工程師合作開發，但兩位負責的功能不一樣。
+
+某天 A 和 B 各別為產品新增了功能，但沒多久就發現 bug，而它是其中一人的程式碼造成的。這時 A 和 B 所寫的代碼都混在一起，所以要 debug 的話就只能重新拆解程式了，通常一個成熟的產品可能都有成千成萬行的程式碼，這種情況下要拆解程式肯定工程浩大。
+
+如果一開始就有做版本控制的話，只要回到上個版本就好了。
+
+### Git 指令
+
+一樣列出一些我最常用的指令，不特別說明用法。
+
+- git init
+  - 初始化
+- git status
+  - 顯示目前 working directory 所有檔案的狀況（例如檔案被變更）
+- git add
+  - 對檔案進行版本控制
+  - 將檔案加入 staging area
+- git commit
+  - 新建版本
+  - 儲存對 staging area 中任何檔案的變更，並將檔案移到 repository
+- git log
+  - 顯示版本歷史記錄（版本代號、作者及時間）
+- git checkout
+  - 切換到其他版本
+- git diff
+  - 查看在 staging area 的檔案目前更動的部分
+- git branch
+  - 管理 branch
+- git merge
+  - 合併 branches
+- git remote
+  - 與遠端協同工作
+
+其他我知道但不太會用的則有 git reset HEAD^, git stash。
+
+## Git Workflow
+
+1. 在 local 端 `git branch <branchname>` 新增一個新的 branch
+2. 在這個 branch 下對程式碼進行新增、編輯、刪除等作業
+3. 剛新增的檔案不被監控，所以要 `git add .` 對所有檔案進行版本監控
+4. 確認修改的內容沒問題可以 `git commit` 新建版本
+5. 把 local 內容推到 remote 端 `git push origin <branchname>`
+6. 在 remote 端（例如 GitHub）上 pull request
+7. 在 request 和其他協作者針對程式碼討論，如果有 conflict 則自己要先 merge 掉
+8. 確認內容沒問題後，merge 到主分枝（通常叫 master 或 main）
+9. 把 remote 的主分枝 `git pull origin master` 到 local
+
+這部分算比較熟的，因為在計畫中都是以這樣的方式交作業。
+
+## 結語
+
+本篇結束，寫文章還是頗花時間的呢，之後要盡量加快這部分的進行。

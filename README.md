@@ -18,6 +18,7 @@
 - footer 連結要另開分頁
 - SEO
 - Google Analytics 
+  - gatsby 似乎尚未支援新版 GA [Support for App + Web property Google Analytics Measurement ID in gatsby-plugin-google-tagmanager · Issue #25359 · gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby/issues/25359)
 
 ### 長期
 - testimonials

@@ -44,5 +44,11 @@ module.exports = {
         types: [`Page`, `Post`],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "ttt",
+      },
+    },
   ],
 }

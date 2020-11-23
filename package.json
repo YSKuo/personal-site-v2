@@ -19,6 +19,7 @@
     "@reflexjs/gatsby-theme-post": "^0.6.8",
     "disqus-react": "^1.0.10",
     "gatsby": "^2.22.11",
+    "gatsby-plugin-google-analytics": "^2.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typeface-inter": "^3.12.0"

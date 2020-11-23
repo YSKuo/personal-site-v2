@@ -75,3 +75,5 @@ yarn-error.log
 content/posts/draft/
 content/posts/examples/
 content/posts/template/
+
+gatsby-config.js

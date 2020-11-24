@@ -1,0 +1,181 @@
+---
+title: 菜雞自評 - JavaScript 基礎
+excerpt: 求職前的自我評估，這篇是審視 JavaScript 基礎概念的了解。
+date: 2020-11-24
+image: https://images.unsplash.com/photo-1546272989-40c92939c6c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+caption: Chicks
+published: true
+featured: false
+tags:
+  - Self-Assessment
+  - Mandarin
+metatags:
+  title: 菜雞自評 - JavaScript 基礎
+  description: 求職前的自我評估，這篇是審視 JavaScript 基礎概念的了解。
+  og:
+    title: Self Assessment - JavaScript Basics.
+    description: Reviewing my learning of JavaScirpt Basics before entering the workforce.
+    image: https://images.unsplash.com/photo-1546272989-40c92939c6c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+    type: article
+  twitter:
+    title: Self Assessment - JavaScript Basics.
+    description: Reviewing my learning of JavaScirpt Basics before entering the workforce.
+    image: https://images.unsplash.com/photo-1546272989-40c92939c6c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+    card: Chicks
+---
+
+## 前言
+
+這是菜雞自評第二篇，參照 [Lidemy 程式導師實驗計畫第四期](https://github.com/Lidemy/mentor-program-4th) 的第二及第三週內容。
+
+評估的方式基本上是依照計畫的 **自我檢測**：
+
+- P1 你能靈活運用變數、迴圈、判斷式等等基本概念來解題
+- P1 你能一行行的說出現在程式在做什麼
+- P1 你知道「回傳」跟「輸出」的差異
+- P1 你可以把用文字寫好的演算法轉成程式碼
+- P1 你理解常用內建函式如何使用
+- P1 你熟悉程式語法並知道如何解決基礎問題
+- P2 你知道為什麼我們需要 unit test
+- P2 你知道什麼是 unit test
+- P2 你知道如何寫 unit test
+- P2 你知道如何測試一個 function
+
+---
+
+## 自評
+
+### 資料型態
+
+JavaScript 有 8 種內建資料型態，其中有 7 種原始（primitive）類型與 1 種物件（object）類型。
+
+#### 原始類型 Primitive types
+
+1. Number 數值
+    - 若字串要轉換成數字，可利用函式 `Number(String)` 或 `parseInt(string, radix)`。
+    - 要特別注意小數點運算可能有 `浮點數誤差`。
+    - `NaN` (Not A Number) 也算是 number，用 `typeof` 檢測可證實這點。
+    - `NaN` 和任何數字做運算都會得到 `NaN`。
+2. String 字串
+    - 要在字串裡印出 `'` 或 `"` 等會影響程式判斷的符號，記得前面要有**反斜線** `\`。
+3. Boolean 布林值
+    - 在 JavaScript 裡，`boolean` 和 `number` 有些情況會自動轉換（稱為 `Type coercion`），例如 `true == 1` 而 `false == 0`。
+4. Undefined
+    - JavaScript 裡的 `undefined` 和 `not defined` 是不同的，`undefined`是一個值。
+    - 若有宣告一個變數但沒有賦值，則這個變數是 `undefined`。
+    - 若一個變數沒有宣告而使用它，程式會出現 **error** 且顯示該變數是 `not defined`。
+5. Null
+    - 如果用 `typeof` 檢測 `null` 會得到 `"object"`，這是一個設計錯誤。
+6. Symbol （ES6 之後更新的內容）
+7. BigInts （新內容）
+    - 用來表示很大的數字。
+
+#### 物件類型 Object type
+
+1. Object
+2. Array
+    - 可視為特殊的 Object，用 `typeof` 檢測會得到 `"object"`。
+3. Function
+    - 一樣可視為特殊的 Object，不過用 `typeof` 檢測會得到 `"function"`。
+
+#### mutable 與 immutable 
+
+Primitive values 是不可變只可以讀取的，意思大概是原始類型的資料都已經存在記憶體裡，當我們使用這些資料時只是取出來用，例如數字 9 或是英文字母 a 原本就存在記憶體裡且它們是不可以被更改，我們不可以把它變成別的資料。
+
+相反的，object 就可以被更改，例如我定義了某陣列 
+
+```js
+let a = [1, 2, 3, 4];
+```
+
+我可以針對這個陣列做更改
+
+```js
+a = [0, 1, 2]
+```
+
+#### 短評
+
+目前還不是很熟資料型態的 Symbol 還有 BigInts，參考文章多瞭解了一點
+
+- [ES6 Symbol 資料型態 符號 - JavaScript (JS) 教學 Tutorial](https://www.fooish.com/javascript/ES6/Symbol.html)
+- [BigInt - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+
+---
+
+### 變數
+
+#### 宣告變數
+
+在 JavaScript 裡，有三種方法宣告變數
+
+1. var
+2. let
+3. const
+
+其中 `let` 和 `const` 是 ES6 新增的內容。
+
+在 ES6 公佈之前，JavaScript 裡只能用 `var` 宣告變數，容易在程式運行時發生 `變數被覆蓋` 的情形，因而產生 bug。ES6 之後基本上宣告變數都用 `let` 和 `const`，若宣告變數之後還想重新賦值用 `let`，不想重新賦值則用 `const`。
+
+`let` 可以宣告只能在目前區塊、階段或表達式中作用的變數。可以想成用 `let` 宣告的變數只會生存在目前的 block 裡面，在 block 之外即使是在同個 function 中都不能存取它。
+
+`const` 宣告變數後，這個變數不能再一次指定值（i.e. `不可再次賦值`）。可以想成 `const` 宣告的變數一樣只會生存在目前的 block 裡面，只是變數內容不能再次被賦值。
+
+以這兩種方式宣告變數可以防止變數被其他 block 影響，要 debug 也就少了項麻煩。
+
+##### 參考
+- [JavaScript: var, let, const 差異 | Medium](https://medium.com/@totoroLiu/javascript-var-let-const-%E5%B7%AE%E7%95%B0-e3d930521230)
+- [let - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/let)
+- [const - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/const)
+
+---
+
+#### 賦值
+
+最簡單的 `let a = 10` 這種賦值就不提了，來複習一下 passed by value/reference。
+
+基本上分兩種
+- Primitives are passed/copied by value
+  - 呼叫者與被呼叫者是兩個獨立的變數但使用相同的數值。如果被呼叫者更改了參數的數值，並不會影響到呼叫者本身。
+- Objects are passed/copied by reference
+  - 呼叫與被呼叫者，都使用相同的變數。如果被呼叫者改變了參數的數值，會影響到呼叫者的變數。
+
+網路上有一些寫得比較好的文章，例如
+
+- [[筆記] 談談 JavaScript 中 by reference 和 by value 的重要觀念](https://pjchender.blogspot.com/2016/03/javascriptby-referenceby-value.html)
+
+不過 `Passing by reference` 這個名詞可能有爭議，有種說法是 object 應該是 `passing by sharing`，詳細內容可參考 [Huli 的文章](https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/)。
+
+#### 短評
+
+並沒有非常理解賦值的底層概念，但我覺得這部分最需要懂的是傳 object 進去某變數，更改該變數的內容也會更改原本 object 裡面的值。
+
+另外還有常見的誤解，像是
+
+```javascript
+var arr = [];
+var arr2 = arr;
+console.log(arr, arr2); // [] []
+arr2 = ['arr2'];
+console.log(arr, arr2); // [] ['arr']
+```
+
+會有這樣的結果是因為在 `arr2 = ['arr2']` 這條，`arr2` 已經被指到另一個記憶體的位置，因此 `arr` 和 `arr2` 兩個 array 是指向不同記憶體。
+
+---
+
+### 內建函式
+
+自己比較不常用也不熟的包括 `slice`, `splice`, `split`，基本上是每次要用到就得搜尋一下用法，參考這篇多理解了點
+
+- [slice()、splice()、split() 傻傻分不清](https://medium.com/@bebebobohaha/slice-splice-split-%E5%82%BB%E5%82%BB%E5%88%86%E4%B8%8D%E6%B8%85-46d9c8992729)
+
+#### 短評
+
+基礎常用的內建函式都會用了，不常用的通常會忘記用法要稍微看一下 MDN。
+
+---
+
+## 結語
+
+本篇結束，自我檢測中的 unit test 這邊完全沒提到，原因當然是因為自己不夠了解，未來再補吧...

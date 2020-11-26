@@ -43,7 +43,7 @@ metatags:
 
 ---
 
-## 自評
+## 複習與自評
 
 ### 程式的基礎
 
@@ -61,19 +61,19 @@ metatags:
 
 ```js
 // 定義一個空的得獎桶 // highlight-line
-const box = []; 
+const box = [];
 
 // 桶中的號碼數量小於三個時就抽號碼 // highlight-line
 while (box.length < 3) {
   // 1 到 10 之間抽個號碼
   const num = Math.ceil(Math.random() * 10);
   // 如果抽起來的號碼不在桶子裡就放進桶子 // highlight-line
-  if (box.indexOf(num) < 0) { 
+  if (box.indexOf(num) < 0) {
     box.push(num);
   }
 }
 // 公布得獎號碼 // highlight-line
-alert(box) 
+alert(box);
 ```
 
 ---
@@ -191,7 +191,7 @@ Command line 是以文字指令的方式操作電腦來執行各種任務，列�
 6. 在 remote 端（例如 GitHub）上 pull request
 7. 在 request 和其他協作者針對程式碼討論，如果有 conflict 則自己要先 merge 掉
 8. 確認內容沒問題後，merge 到主分枝（通常叫 master 或 main）
-9. 把 remote 的主分枝 `git pull origin master` 到 local
+9.  把 remote 的主分枝 `git pull origin master` 到 local
 
 這部分算比較熟的，因為在計畫中都是以這樣的方式交作業。
 

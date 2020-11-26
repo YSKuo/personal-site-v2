@@ -9,6 +9,7 @@ featured: false
 tags:
   - Self-Assessment
   - Mandarin
+  - JavaScript
 metatags:
   title: 菜雞自評 - JavaScript 基礎
   description: 求職前的自我評估，這篇是審視 JavaScript 基礎概念的了解。
@@ -43,7 +44,7 @@ metatags:
 
 ---
 
-## 自評
+## 複習與自評
 
 ### 資料型態
 
@@ -52,37 +53,37 @@ JavaScript 有 8 種內建資料型態，其中有 7 種原始（primitive）類
 #### 原始類型 Primitive types
 
 1. Number 數值
-    - 若字串要轉換成數字，可利用函式 `Number(String)` 或 `parseInt(string, radix)`。
-    - 要特別注意小數點運算可能有 `浮點數誤差`。
-    - `NaN` (Not A Number) 也算是 number，用 `typeof` 檢測可證實這點。
-    - `NaN` 和任何數字做運算都會得到 `NaN`。
+   - 若字串要轉換成數字，可利用函式 `Number(String)` 或 `parseInt(string, radix)`。
+   - 要特別注意小數點運算可能有 `浮點數誤差`。
+   - `NaN` (Not A Number) 也算是 number，用 `typeof` 檢測可證實這點。
+   - `NaN` 和任何數字做運算都會得到 `NaN`。
 2. String 字串
-    - 要在字串裡印出 `'` 或 `"` 等會影響程式判斷的符號，記得前面要有**反斜線** `\`。
+   - 要在字串裡印出 `'` 或 `"` 等會影響程式判斷的符號，記得前面要有**反斜線** `\`。
 3. Boolean 布林值
-    - 在 JavaScript 裡，`boolean` 和 `number` 有些情況會自動轉換（稱為 `Type coercion`），例如 `true == 1` 而 `false == 0`。
+   - 在 JavaScript 裡，`boolean` 和 `number` 有些情況會自動轉換（稱為 `Type coercion`），例如 `true == 1` 而 `false == 0`。
 4. Undefined
-    - JavaScript 裡的 `undefined` 和 `not defined` 是不同的，`undefined`是一個值。
-    - 若有宣告一個變數但沒有賦值，則這個變數是 `undefined`。
-    - 若一個變數沒有宣告而使用它，程式會出現 **error** 且顯示該變數是 `not defined`。
+   - JavaScript 裡的 `undefined` 和 `not defined` 是不同的，`undefined`是一個值。
+   - 若有宣告一個變數但沒有賦值，則這個變數是 `undefined`。
+   - 若一個變數沒有宣告而使用它，程式會出現 **error** 且顯示該變數是 `not defined`。
 5. Null
-    - 如果用 `typeof` 檢測 `null` 會得到 `"object"`，這是一個設計錯誤。
+   - 如果用 `typeof` 檢測 `null` 會得到 `"object"`，這是一個設計錯誤。
 6. Symbol （ES6 之後更新的內容）
 7. BigInts （新內容）
-    - 用來表示很大的數字。
+   - 用來表示很大的數字。
 
 #### 物件類型 Object type
 
 1. Object
 2. Array
-    - 可視為特殊的 Object，用 `typeof` 檢測會得到 `"object"`。
+   - 可視為特殊的 Object，用 `typeof` 檢測會得到 `"object"`。
 3. Function
-    - 一樣可視為特殊的 Object，不過用 `typeof` 檢測會得到 `"function"`。
+   - 一樣可視為特殊的 Object，不過用 `typeof` 檢測會得到 `"function"`。
 
-#### mutable 與 immutable 
+#### mutable 與 immutable
 
-Primitive values 是不可變只可以讀取的，意思大概是原始類型的資料都已經存在記憶體裡，當我們使用這些資料時只是取出來用，例如數字 9 或是英文字母 a 原本就存在記憶體裡且它們是不可以被更改，我們不可以把它變成別的資料。
+Primitive values 是不可變只可以讀取的，意思大概是原始類型的資料都已經存在記憶體裡，當我們使用這些資料時只是取出來用， 例如數字 9 或是英文字母 a 原本就存在記憶體裡且它們是不可以被更改，我們不可以把它變成別的資料。
 
-相反的，object 就可以被更改，例如我定義了某陣列 
+相反的，object 就可以被更改，例如我定義了某陣列
 
 ```js
 let a = [1, 2, 3, 4];
@@ -91,7 +92,7 @@ let a = [1, 2, 3, 4];
 我可以針對這個陣列做更改
 
 ```js
-a = [0, 1, 2]
+a = [0, 1, 2];
 ```
 
 #### 短評
@@ -124,6 +125,7 @@ a = [0, 1, 2]
 以這兩種方式宣告變數可以防止變數被其他 block 影響，要 debug 也就少了項麻煩。
 
 ##### 參考
+
 - [JavaScript: var, let, const 差異 | Medium](https://medium.com/@totoroLiu/javascript-var-let-const-%E5%B7%AE%E7%95%B0-e3d930521230)
 - [let - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/let)
 - [const - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/const)
@@ -135,6 +137,7 @@ a = [0, 1, 2]
 最簡單的 `let a = 10` 這種賦值就不提了，來複習一下 passed by value/reference。
 
 基本上分兩種
+
 - Primitives are passed/copied by value
   - 呼叫者與被呼叫者是兩個獨立的變數但使用相同的數值。如果被呼叫者更改了參數的數值，並不會影響到呼叫者本身。
 - Objects are passed/copied by reference
@@ -156,7 +159,7 @@ a = [0, 1, 2]
 var arr = [];
 var arr2 = arr;
 console.log(arr, arr2); // [] []
-arr2 = ['arr2'];
+arr2 = ["arr2"];
 console.log(arr, arr2); // [] ['arr']
 ```
 

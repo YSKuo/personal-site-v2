@@ -19,7 +19,7 @@
 - SEO
 - RSS
 - Google Analytics 
-  - gatsby 似乎尚未支援新版 GA [Support for App + Web property Google Analytics Measurement ID in gatsby-plugin-google-tagmanager · Issue #25359 · gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby/issues/25359)
+  - gatsby 似乎尚未支援新版 GA [gatsby-plugin-google-analytics doesn't seem to work with newer GA 4 properties · Issue #28155 · gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby/issues/28155)
 
 ### 長期
 - testimonials

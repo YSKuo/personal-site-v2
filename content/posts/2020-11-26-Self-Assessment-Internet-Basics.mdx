@@ -1,0 +1,371 @@
+---
+title: 菜雞自評 - 網路基礎
+excerpt: 求職前的自我評估，這篇是審視網路基礎概念的了解。
+date: 2020-11-26
+image: https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+caption: Connect
+published: true
+featured: false
+tags:
+  - Self-Assessment
+  - Mandarin
+metatags:
+  title: 菜雞自評 - 網路基礎
+  description: 求職前的自我評估，這篇是審視網路基礎概念的了解。
+  og:
+    title: Self Assessment - Internet Basics.
+    description: Reviewing my learning of Internet Basics before entering the workforce.
+    image: https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+    type: article
+  twitter:
+    title: Self Assessment - Internet Basics.
+    description: Reviewing my learning of Internet Basics before entering the workforce.
+    image: https://images.unsplash.com/photo-1488229297570-58520851e868?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80
+    card: Connect
+---
+
+## 前言
+
+這是菜雞自評第三篇，參照 [Lidemy 程式導師實驗計畫第四期](https://github.com/Lidemy/mentor-program-4th) 的第四週內容。
+
+評估的方式基本上是依照計畫的 **自我檢測**：
+
+- P1 你知道網路背後大概的運作模式
+- P1 你知道什麼是 Request 跟 Response
+- P1 你知道什麼是 DNS 以及運作原理
+- P1 你知道 HTTP 與 HTTPS 的差異
+- P1 你知道 localhost 跟 127.0.0.1 是什麼
+- P1 你知道 GET 與 POST 的差別
+- P1 你知道常用的 HTTP Header
+- P1 你知道什麼是 API
+- P1 你會使用 node.js 寫出串接 API 的程式
+- P1 你知道 HTTP method 有哪些
+- P1 你知道基本的 HTTP status code，像是 200、301、400、404、500
+
+---
+
+## 複習與自評
+
+前陣子剛學習網路基礎概念時，除了看一些網路資源以外
+
+主要是藉由我的程式導師 Huli 的這篇文 [從傳紙條輕鬆學習基本網路概念 | Medium](https://hulitw.medium.com/learning-tcp-ip-http-via-sending-letter-5d3299203660) 來學習這些基礎知識的，後來自己也寫了一篇文 [如何以餐廳為例來了解網路基礎概念 | Medium](https://medium.com/@crowley3141/%E6%B7%BA%E8%AB%87%E7%B6%B2%E8%B7%AF%E5%9F%BA%E7%A4%8E%E6%A6%82%E5%BF%B5-79e8034efdd4)。
+
+已經過一段時間了，現在再次來複習自己對這些基礎概念了解多少。
+
+### 網際網路模型
+
+常分為兩種模型，分別是 OSI 和 TCP/IP。
+
+OSI 模型是 **O**pen **S**ystem **I**nterconnection Model 的縮寫，將網路架構分為七層，比較多用在學術理論上。
+
+TCP/IP 模型是 **T**ransmission **C**ontrol **P**rotocol 和 **I**nternet **P**rotocol 的縮寫，將網路架構分為四層，一般多用這種模型描述網路架構。
+
+![圖 2.1-4、OSI 與 TCP/IP 協定之相關性](https://i.imgur.com/sYRCcwb.png)
+[圖源：鳥哥的 Linux 私房菜](http://linux.vbird.org/linux_server/0110network_basic.php)
+
+---
+
+### TCP
+
+TCP 是 **T**ransmission **C**ontrol **P**rotocol 的縮寫，是一種用來確保雙方順利 `發送` 與 `接收` 資訊的協定，特點在於 **可靠**。大部分的連線方式都是透過 TCP 進行，因為一般都需要可靠連線。
+
+TCP 會透過三路握手（或稱三次握手，three-way handshake）過程建立一個連接。
+
+![](https://s3.notfalse.net/wp-content/uploads/2016/12/24160012/Three-way-Handshake1.png)
+[圖源：TCP 三向交握 (Three-way Handshake)](https://notfalse.net/7/three-way-handshake)
+
+---
+
+### UDP
+
+UDP 是 **U**ser **D**atagram **P**rotocol，和 TCP 不同的是它不會確認雙方的連線，便直接將資料傳送出去，傳送過程不和對方確認是否收到。適用於不需要在程式中執行錯誤檢查和糾正的應用，對時間有較高要求的應用程式通常使用 UDP，因為丟棄封包比等待或重傳導致延遲更可取。
+
+視訊和直播通常會用這種協定傳送，因為要求迅速得把影響資訊傳送出去，但又不需要確認對方是否每一筆資料都收到。
+
+---
+
+### 什麼是 Request 跟 Response
+
+- 由 client 發送出來的訊息叫做 `request`
+- 由 server 發送出來的訊息叫做 `response`
+
+---
+
+### IP
+
+IP 是 **I**nternet **P**rotocol 的縮寫，其中的 IP 位址是用來發送 `request` 和接受 `response` 的一串數字，可以想成住家地址，要寄信或收信都需要這個地址才能確保交換資料沒問題。
+
+常分為三類
+
+- 固定 IP
+  - 每次連接都是同個 IP 位址，一般是 server 或官方網站。
+- 浮動 IP
+  - 每次連接時 IP 位址都不一樣，一般用戶連到網際網路會用這種型式。
+  - 優點是電信業者不用為個體用戶預留 IP 而導致數量不夠用，而用戶也因為每次的 IP 都不同故可避免別人有意攻擊。
+- 虛擬 IP
+  - 內網才能連到的 IP。
+  - 有虛擬 IP 的電腦要對外連接一定要有對外 IP，像是公司內網或是在家裡全部的人都連到同個 WIFI 的情況，該些裝置對外都有同個 IP。
+  - 連到外網會透過數據機，所以 client 發出 request 會透過數據機發送，而 server 回送 response 也會送到數據機，再從數據機傳給裝置。
+
+#### IPv4 / IPv6
+
+- IPv4
+  - IP 位址由 32 位元二進位陣列成，為便於使用，常以 `XXX.XXX.XXX.XXX` 形式表現，每組 XXX 代表小於或等於 255 的 10 進位數，該表示方法稱為點分十進位。
+- IPv6
+  - 從 IPv4 到 IPv6 最顯著的變化就是網路位址的長度。
+  - 它來取代 IPv4 主要是為了解決 IPv4 位址枯竭問題，同時它也在其他方面對於 IPv4 有許多改進。
+
+##### 參考
+
+- [IP 位址 - Wikipedia](https://zh.wikipedia.org/wiki/IP%E5%9C%B0%E5%9D%80)
+
+---
+
+### localhost 與 127.0.0.1
+
+- localhost(本地伺服器)：不經網路卡傳輸，不受網路防火牆和網路卡相關限制。
+- 127.0.0.1(本機伺服器)：通過網路卡傳輸，依賴網路卡，並受到網路防火牆和網路卡相關限制。
+
+localhost 訪問時，系統帶當前使用者的許可權去訪問，而用 IP(本機伺服器) 的時候，等於本機是通過網路再去訪問本機，可能涉及到網路使用者的許可權。
+
+##### 參考
+
+- [localhost 與 127.0.0.1 的概念和工作原理之不同](https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/50603/)
+
+---
+
+### DNS
+
+DNS 是 **D**omain **N**ame **S**ystem 的縮寫，作為將域名和 IP 位址相互對映的一個分散式資料庫，能夠使人更方便地存取網際網路。
+
+類似手機裡的 `聯絡人`，每當你要打電話給你的朋友，你可以拿起手機直接撥打他的 `電話號碼`；或是點選手機聯絡人中他的 `名字`，那你的手機就會透過已記錄的 `電話號碼` 來撥號。DNS 利用類似的概念，當你想要瀏覽一個網站（例如 Google），你可以直接輸入該網站的 `IP 位址`（Google 的 IP 位址為 `8.8.8.8`），或是在瀏覽器網址列輸入的 `Domain name`（輸入 `www.google.com`），那你的瀏覽器就會透過 DNS 幫你連接到該網站。
+
+- 把 `IP 位址` 類比為聯絡人的 `電話號碼`
+  - 例 你的朋友的 `電話號碼` 為 `0912345678`
+  - 例 Google 的 `IP 位址` 為 `8.8.8.8`
+- 把 `Domain name` 類比為聯絡人的 `名字`
+  - 例 你的朋友的 `名字` 為 `John Doe`
+  - 例 Google 的 `Domain name` 為 `www.google.com`
+
+---
+
+### HTTP
+
+HTTP 是 **H**yper**T**ext **T**ransfer **P**rotocol 的縮寫，中文譯作 `超文本傳輸協定`，HTTP 是一個 `client` 端（用戶）和 `server` 端（網站）之間 `request` 和 `response` 的標準，通常使用 TCP 協定。
+
+可以把 HTTP 想成 `client` 和 `server` 溝通的語言，透過 HTTP 它們才能了解對方傳來的 `request` 和 `response` 是什麼。
+
+HTTP 訊息格式有 header 和 body
+
+- header：放額外重要資訊
+  - Request URL
+  - Request Method
+  - Status Code
+- body：放主要內容
+
+#### 常用的 HTTP method
+
+- `GET` 取用資料。
+- `POST` 提交資料。
+- `PUT` 上傳最新內容（會把舊的資料整個覆蓋掉）。
+- `DELETE` 刪除資料。
+- `PATCH` 局部修改資料（不會覆蓋整個資料）。
+
+> 假設 GET 表示信封內不得裝信件的寄送方式，如同是明信片一樣（感謝網友 Kevin 的建議，採用明信片來詮釋 GET），你可以把要傳遞的資訊寫在信封(http-header)上，寫滿為止，價格比較便宜。然而 POST 就是信封內有裝信件的寄送方式（信封有內容物），不但信封可以寫東西，信封內 (message-body) 還可以置入你想要寄送的資料或檔案，價格較貴。
+>
+> 使用 GET 的時候我們直接將要傳送的資料以 Query String（一種 Key/Vaule 的編碼方式）加在我們要寄送的地址(URL)後面，然後交給郵差傳送。使用 POST 的時候則是將寄送地址(URL)寫在信封上，另外將要傳送的資料寫在另一張信紙後，將信紙放到信封裡面，交給郵差傳送。
+>
+> - [淺談 HTTP Method：表單中的 GET 與 POST 有什麼差別？](https://blog.toright.com/posts/1203/%E6%B7%BA%E8%AB%87-http-method%EF%BC%9A%E8%A1%A8%E5%96%AE%E4%B8%AD%E7%9A%84-get-%E8%88%87-post-%E6%9C%89%E4%BB%80%E9%BA%BC%E5%B7%AE%E5%88%A5%EF%BC%9F.html)
+
+#### 常見的 HTTP 狀態碼
+
+- `1xx`：訊息
+  - 代表請求已被接受，需要繼續處理。
+- `2xx`：成功
+  - 這一類型的狀態碼，代表請求已成功被伺服器接收、理解並接受。
+  - `200 OK`：請求已成功，請求所希望的回應頭或資料體將隨此回應返回。
+  - `204 No Content`：server 正確地 response 了，只是沒有內容。
+- `3xx`：重新導向
+  - 需要客戶端採取進一步的操作才能完成請求。
+  - `301 Moved Permanently`：可以簡單地理解為該資源已經被永久改變了位置。
+  - `302 Found`：要求 client 執行重新導向，但所求資料只是臨時性地改變了位置，所以之後要在訪問這個資料時，還是應以原本的 url 發出 request。（比較：`301 Moved Permanently` 則是永久改變位置）
+- `4xx`：客戶端錯誤
+  - 代表客戶端可能發生了錯誤，妨礙了伺服器的處理。
+  - `400 Bad Request`：由於明顯的客戶端錯誤（例：格式錯誤的請求語法、太大的大小、無效的請求訊息或欺騙性路由請求），伺服器不能或不會處理該請求。
+  - `401 Unauthorized`：client 沒有必要的驗證資料，表示 client 需要提供正確的驗證才會得到相應的 response。
+  - `404 Not Found`：請求失敗，請求所希望得到的資源未被在伺服器上發現，但允許用戶的後續請求。通常是因為用戶所存取的對應網頁已被刪除、移動或從未存在。
+- `5xx`：伺服器錯誤
+  - 表示伺服器無法完成明顯有效的請求。
+  - `500 Internal Server Error`：伺服器遇到了一個未曾預料的狀況，導致了它無法完成對請求的處理。
+  - `505 HTTP Version Not Supported`：client 使用的 HTTP 版本不被 server 支援所以發生錯誤。
+
+![HTTP status code cheat sheet](https://i.imgur.com/y8t0IfQ.png)
+
+##### 參考
+
+1. [HTTP 消息](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Messages)
+1. [第十二天：從瀏覽器認識 HTTP 協定](https://ithelp.ithome.com.tw/articles/10195016)
+1. [HTTP 狀態碼 - Wikipedia ](https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81)
+1. [常見與不常見的 HTTP Status Code](https://noob.tw/http-status-code/)
+
+---
+
+### HTTPS
+
+HTTPS 是 **H**yper**T**ext **T**ransfer **P**rotocol **S**ecure 的縮寫，中文譯作超文本傳輸安全協定，HTTPS 會經由 HTTP 進行通訊，但利用 SSL/TLS 來 **加密** 封包。
+
+HTTPS 開發的主要目的，是提供對網站伺服器的身分認證，**保護交換資料的隱私與完整性**。
+
+> 實際的架構上，會透過公開金鑰加密傳遞出共用的金鑰，再透過共用金鑰加密進行後續的傳遞，兼顧了安全性及傳遞速度。
+> 來源：[前端三十｜ 28. [WEB] HTTP 和 HTTPS 的差別是什麼？](https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-28-web-http-%E5%92%8C-https-%E7%9A%84%E5%B7%AE%E5%88%A5%E6%98%AF%E4%BB%80%E9%BA%BC-21ccafb6f36f)
+
+#### HTTP 與 HTTPS 的差異
+
+主要在於 HTTPS 有對資料進行保護而 HTTP 沒有，故 HTTP 不夠安全而容易遭受 **監聽** 或 **中間人攻擊**，而 HTTPS 可以防止前述攻擊。
+
+HTTP 不夠安全的原因有
+
+1. HTTP 傳遞是使用明文的方式並不具備加密的功能，所以無法對內容進行加密。
+2. 不會對 client 端與 server 進行驗證，無法確定兩端是否為正確的
+
+##### 參考
+
+1. [HTTPS 是如何保证安全的？](https://www.jianshu.com/p/b894a7e1c779)
+2. [HOW HTTPS WORKS - 漫畫解釋 HTTPS](https://howhttps.works/)
+3. [前端三十｜ 28. [WEB] HTTP 和 HTTPS 的差別是什麼？](https://medium.com/schaoss-blog/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%8D%81-28-web-http-%E5%92%8C-https-%E7%9A%84%E5%B7%AE%E5%88%A5%E6%98%AF%E4%BB%80%E9%BA%BC-21ccafb6f36f)
+
+---
+
+### Port
+
+Port 是用來區別同一台電腦（server）的不同服務。
+
+Port 會接在 IP 後面（例：12.20.77.60 **:80** ），一台伺服器有很多種服務，透過 port 可以直接對應不同服務，如果有程式在監聽該 port 就可以直接接受到 request。
+
+常用 Port
+
+- 21：FTP
+- 80：HTTP
+- 443：HTTPS
+
+如果要自己測試某個程式，在設定 port 時就會排除那些已經給特定服務用的 port（例如 `443` 是給 HTTPS 用的），常會用 `3000` 或 `4000` 來測試。
+
+##### 參考
+
+- [常用 TCP Port 作用(各種 Port 介紹)](https://yun1450.pixnet.net/blog/post/47494172)
+
+---
+
+### API
+
+API 是 **A**pplication **P**rogramming **I**nterface 的縮寫，中文會翻譯成應用程式介面，廣義的 API 是指雙方交換資料的介面，有可能是電腦作業系統、應用程式或是網站提供的，也就是說透過 API，可讓雙方交換資料。
+
+現在常講的常常指的是 WEB API，是透過 HTTP 協定的 API，又稱 HTTP API。
+
+#### RESTful API
+
+REST 是 **Re**presentational **S**tate **T**ransfer 的縮寫，REST 是一種風格而 RESTful API 指的是符合這種風格的 API
+
+一種 Client 端和 Server 端的呼叫服務形式，透過既定的 **規則**、滿足約束 **條件** 和 **原則** 的應用程式設計，目的是幫助在世界各地不同軟體、程式在網際網路中能夠互相傳遞訊息，像是要取得資料就是 GET，發送資料就用 PUT，符合語意讓 API 更容易懂。
+
+非 RESTful API 可能會一律使用 GET 來收發資訊，例如透過 url 發出 `example/deletePosts/:id`。
+符合 RESTful 的會用 DELETE 發 request `example/posts/:id` 給對方。
+
+要注意的是它不是標準，所以即使沒有使用這種風格也能透過 HTTP 收發資訊。
+
+#### 使用 node.js 寫出串接 API 的程式
+
+```js
+const request = require("request"); // 引入 library
+const API_ENDPOINT = "https://lidemy-book-store.herokuapp.com";
+// 在這邊定義 API 是因為之後要改 url 的話，直接在這邊改進好
+
+request(`${API_ENDPOINT}/books?_limit=10`, (err, res, body) => {
+  if (err) {
+    return console.log("抓取失敗", err);
+  }
+
+  let data;
+
+  try {
+    data = JSON.parse(body); // 成功的話就把資料放到 data
+  } catch (err) {
+    console.log(err); // 失敗就印出
+    return;
+  }
+
+  for (let item of data) {
+    console.log(`${item.id} ${item.name}`);
+  }
+});
+```
+
+#### 短評
+
+後來都沒用這種方法了，後面都是用 fetch 來串，所以用 request 的方法不太熟了。
+
+---
+
+### 簡答
+
+1.  請以自己的話解釋 API 是什麼？
+
+API 的核心概念就是交換資料，使用方和提供方可以這個 `介面` 來達成資料交換的目的，提供 API 的人需要讓使用者知道 API 在哪（網址）以及怎麼用（文件）。
+
+2. 假設你現在是個餐廳平台，需要提供 API 給別人串接並提供基本的 CRUD 功能，包括：回傳所有餐廳資料、回傳單一餐廳資料、刪除餐廳、新增餐廳、更改餐廳，你的 API 會長什麼樣子？請提供一份 API 文件。
+
+API url: https://eatable.com
+
+- 回傳所有餐廳資料
+
+  - method: `GET`
+  - path: `/restaurants`
+  - parameter: `_limit` 限制回傳數量
+  - example: `/restaurants?_limit:5`
+
+- 回傳單一餐廳資料
+
+  - method: `GET`
+  - path: `/restaurants/:id`
+  - example: `/restaurants/3`
+
+- 刪除餐廳
+
+  - method: `DELETE`
+  - path: `/restaurants/:id`
+  - example: `/restaurants/3`
+
+- 新增餐廳
+
+  - method: `POST`
+  - path: `/restaurants`
+  - parameter: `name` 餐廳名稱
+
+- 更改餐廳
+  - method: `PATCH`
+  - path: `/restaurants/:id`
+  - parameter: `name` 餐廳名稱
+  - example: `/restaurants/3`
+
+### Example Response
+
+```
+[
+	{"id":1,"name":"包大人吃到飽"},
+	{"id":2,"name":"豹子頭全都要"},
+	{"id":3,"name":"金鷹中心"},
+	{"id":4,"name":"大快樂"},
+	{"id":5,"name":"古拳法雞湯"},
+	{"id":6,"name":"有為餅店"},
+	{"id":7,"name":"豐夥輪"},
+	{"id":8,"name":"九五二七精華"},
+	{"id":9,"name":"春樹秋霜茶餐廳"},
+	{"id":10,"name":"雪風飄飄"}
+]
+```
+
+---
+
+## 結語
+
+其實有滿多目前是知道，但若一時問我或要我解釋的話，我大概還要再查一下資料才能講解，所以這部分要再多加強，免得面試時被問倒。

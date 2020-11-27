@@ -1,5 +1,6 @@
-require(`dotenv`).config()
-const { toSlug } = require("@reflexjs/gatsby-helpers") 
+require(`dotenv`).config();
+const { toSlug } = require("@reflexjs/gatsby-helpers");
+const emoji = require("remark-emoji");
 
 module.exports = {
   pathPrefix: "",
@@ -16,7 +17,7 @@ module.exports = {
       options: {
         contentPath: "content/posts",
         basePath: "/blog",
-        postsPerPage: 4,
+        postsPerPage: 10,
         pageQuery: `
           query {
             allPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {name: {nin: "example"}}}}) {
@@ -35,7 +36,7 @@ module.exports = {
           }
         `,
         slugResolver: null,
-      }
+      },
     },
     "@reflexjs/gatsby-theme-post",
     {
@@ -52,5 +53,16 @@ module.exports = {
         anonymize: true,
       },
     },
+    {
+      resolve: `@reflexjs/gatsby-theme-core`,
+      options: {
+        contentPath: `content/pages`,
+        imagesPath: `content/images`,
+        basePath: ``,
+        mdxRemarkPlugins: [emoji],
+        gatsbyRemarkPlugins: [],
+        remarkPlugins: [],
+      },
+    },
   ],
-}
+};

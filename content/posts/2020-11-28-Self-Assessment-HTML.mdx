@@ -1,0 +1,432 @@
+---
+title: 菜雞自評 - 基礎 HTML
+excerpt: 求職前的自我評估，這篇是審視基礎 HTML 的了解。
+date: 2020-11-28
+image: https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80
+caption: HTML
+published: true
+featured: false
+tags:
+  - Self-Assessment
+  - Mandarin
+metatags:
+  title: 菜雞自評 - 基礎 HTML
+  description: 求職前的自我評估，這篇是審視基礎 HTML 的了解。
+  og:
+    title: Self Assessment - HTML.
+    description: Reviewing my learning of HTML before entering the workforce.
+    image: https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80
+    type: article
+  twitter:
+    title: Self Assessment - HTML.
+    description: Reviewing my learning of HTML before entering the workforce.
+    image: https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80
+    card: HTML
+---
+
+## 前言
+
+這是菜雞自評第四篇，參照 [Lidemy 程式導師實驗計畫第四期](https://github.com/Lidemy/mentor-program-4th) 的第六週內容，但這篇只會討論 HTML 的部分，不然內容太多了...
+
+評估的方式基本上是依照計畫的 **自我檢測**：
+
+- P1 你知道 HTML 是在做什麼的
+- P1 你知道如何使用有語意的（semantic）標籤
+- P1 你知道基本 SEO 的概念
+
+---
+
+## 複習與自評
+
+### HTML 是什麼
+
+HTML 是 **H**yper**T**ext **M**arkup **L**anguage 的縮寫，它是一種標記語言，可利用 `tag` 的方式來寫網頁，瀏覽器會讀懂這些標記然後渲染出畫面。
+
+最基本的結構如下
+
+```html
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body></body>
+</html>
+```
+
+還有更精細的圖解
+
+![](https://i.imgur.com/H977bA6.png)
+來源： [interneting is hard](https://www.internetingishard.com/)
+
+---
+
+### 一般的 HTML Tag
+
+#### 文字顯示
+
+- 標題
+  - `<h1>` 最大的標題
+  - `<h2>` 次大的標題（副標題）
+  - `<h3>` `<h4>` `<h5>` `<h6>` 依序縮小量級的標題
+- 文章段落
+  - `<p>`
+
+這個還滿常用也滿基本的，標題的部分我自己比較少用到 `h3` 以後的大小，不過 markdown 的話倒是各種大小都常用到。
+
+---
+
+#### 分組
+
+- `<div>` division 段落的分組
+- `<span>` 行內文字的分組
+
+---
+
+#### 圖像 image
+
+```html
+<img alt="" title="" src="" />
+```
+
+- `alt`
+  - 當圖像無法正確顯示時，會顯示 alt 的文字內容
+  - 方便視障人士使用無障礙工具以解讀圖片內容
+- `title` 滑鼠指到圖像時，會顯示 title 的文字內容
+- `src` 內容放網址 url
+
+---
+
+#### 清單 list
+
+- `<ul>` unorderd list
+- `<ol>` ordered list
+- `<li>` list item
+  - 要放在 `<ul></ul>` 或 `<ol></ol>` 之間
+
+---
+
+#### 保留完整格式 preformatted text
+
+`<pre></pre>`
+放在這個 tag 之間的文字，會按照原始格式顯示，可用來顯示程式碼。
+
+這個我目前還滿少用的。
+
+---
+
+#### 換行 line break
+
+語法：`<br>`
+
+---
+
+#### 表格 table
+
+- `<table>`
+- `<tr>` table row
+  - 放在 `<table></table>` 之間
+- `<td>` table cell
+  - 放在 `<tr></tr>` 之間
+- `<th>` table header
+  - 放在 `<table></table>` 之間
+
+---
+
+#### 錨點 anchor
+
+```html
+<a href="" target=""></a>
+```
+
+- `href` hypertext reference
+  - 放 `url` 連到 url 的網頁
+  - 放 `#id` 連到同個 html 中指定 id 的位子
+- `target`
+  - `_self` 該 tab 直接到超連結網址處
+  - `_blank` 新開 tab
+
+其實這個 tag 就是用來放連結的，就像是放了一個錨，讓人點擊它之後會帶到別處。
+
+---
+
+#### 嵌入網頁
+
+```html
+<iframe src="url" width="100%" height="500px" />
+```
+
+- `width` 設定寬度
+- `height` 設定高度
+
+這個可以用來放 Youtube 或是 Google map 的內容。
+
+---
+
+#### 表單 form
+
+![](https://www.internetingishard.com/html-and-css/forms/html-form-elements-939709.png)
+
+- `<form method="GET">`
+  - `form` 的 method 就是 HTTP method
+- `<input type="" id="" name=""/>` 放在 `<form></form>` 之間
+  - `type` 有 `text`、`button`、`checkbox`、`email` ... 多種
+  - `id` 指定 id 除了可用在 CSS selector 上，還可用來對應 `label` 的 `for`
+- `<label>`
+  - `<label>` 的 `for` 屬性可對應 `<input>` 的 `id`，這樣使用者點到 `<label>` 的文字內容也同時點擊 `<input>`
+  - 也可將 `<input>` 放在 `<label>` 之間，同樣方便使用者正確點到 `<input>`
+
+![](https://www.internetingishard.com/html-and-css/forms/label-element-for-attribute-313489.png)
+
+##### 範例
+
+```html
+<form method="GET">
+  <!-- 利用 GET，使用者按 submit 之後會把結果印在 url 上 -->
+  First Name: <input type="text" name="firstname" /><br />
+  Last Name: <input type="text" name="lastname" /><br />
+  Email: <input type="email" required /><br />
+  Password: <input type="password" min="5" name="password" /><br />
+  Birthday: <input type="date" /><br />
+
+  Gender:<br />
+  <input type="radio" name="gender" value="male" />Male<br />
+  <input type="radio" name="gender" value="female" />Female<br />
+  <input type="radio" name="gender" value="other" />Other<br />
+
+  Pets: <br />
+  <input type="checkbox" name="cat" /> Cat<br />
+  <input type="checkbox" name="dog" /> Dog<br />
+
+  Cars: <br />
+  <select name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="audi">Audi</option></select
+  ><br />
+
+  <input type="submit" value="Register!" />
+  <input type="reset" value="reset" />
+</form>
+```
+
+結果會長得像這樣：
+
+![Form](https://i.imgur.com/ocmQeTy.png)
+
+##### form method 中 GET 及 POST 的差別
+
+|            | GET                                     | POST                                                     |
+| ---------- | --------------------------------------- | -------------------------------------------------------- |
+| 網址差異   | 網址會帶有 HTML Form 表單的參數與資料。 | 資料傳遞時，網址並不會改變。                             |
+| 資料傳遞量 | 由於是透過 URL 帶資料，所以有長度限制。 | 由於不透過 URL 帶參數，所以不受限於 URL 長度限制。       |
+| 安全性     | 表單參數與填寫內容可在 URL 看到。       | 透過 HTTP Request 方式，故參數與填寫內容不會顯示於 URL。 |
+
+一般的表單用 GET 直接傳遞資訊即可，但需要保密的資料（例如帳號密碼）必須用 POST 來處理。
+
+---
+
+### meta 標籤
+
+`<meta>` 是提供資訊給瀏覽器或是搜尋引擎的標籤，一般都放置在 HTML 中的 `<head>` 標籤之下，內容並不會呈現在網頁上而被使用者看到，只有在原始碼和搜尋結果中才能看到當中的文字，可用在 RWD 和 SEO 上。
+
+```html
+<meta name="" content="" />
+```
+
+#### RWD
+
+為了讓瀏覽器隨使用者螢幕尺寸而變換排版，以下這條內容必須加
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+#### SEO
+
+此外還可應用在優化搜尋引擎的搜尋結果，基本的 `name` 有 `description`、`keywords` 兩種值，但 `keywords` 現在已經不被 Google 作為搜尋排名的參考了。
+
+```html
+<meta name="description" content="摘要" />
+```
+
+---
+
+### HTML escape
+
+用來在 HTML 頁面顯示純文字，避免被瀏覽器辨別為 tag。
+
+- `"` 要寫成 `&quot`
+- `&` 要寫成 `&amp`
+- `<` 要寫成 `&lt`
+- `>` 要寫成 `&gt`
+
+可在 JavaScript 寫 function 處理轉換
+
+```javascript
+function escapeHTML(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+```
+
+##### 參考
+
+- [線上轉換器](https://www.freeformatter.com/html-escape.html#ad-output)
+
+---
+
+### 語意標籤 semantic elements
+
+![](https://www.jungledisk.com/blog/content/images/blog/div-soup-vs-semantic-html.png)
+
+語意標籤作為 `<div>` 的替代 tag，使網頁更有原始描述更易讀且有意義。
+
+- `<header>`
+  - 網頁的標頭
+  - 適合放置網站標題、LOGO、主要的導覽列(main navigation)
+- `<nav>`
+  - navigation 網頁的選單、導覽
+  - 常搭配清單的 tag （即`<ul>` 和 `<ol>`）
+  - 視需求而可在同個網頁設置多個 `<nav>`
+- `<main>`
+  - 網頁的主要內容
+- `<aside>`
+  - 網頁的側欄、附加內容
+  - 適合放置廣告內容、側邊導覽列(sidebar)
+- `<article>`
+  - 一篇文章內容
+  - 通常一個頁面只會有一篇文章
+- `<section>`
+  - 自訂的區塊，例如數篇摘要組成的空間
+  - 至少要有一個 heading，不然會被定義為 untitled section
+  - 表示需要比 `<div>` 更多 **描述** 才適合使用
+- `<footer>`
+  - 網頁的頁尾
+  - 適合放置聯絡方式、著作權宣告、社群連結和作者簡介等等
+- `<mark>`
+  - 強調一小塊內容
+- `<time>`
+  - 顯示日期時間
+  - 可添加 `datetime` 屬性
+- `<address>`
+  - 通常放在 `<footer>` 裡
+  - 可以是必要的任何一種聯系方式，如真實地址、URL、電子郵箱、電話號碼、社交媒體賬號、地理坐標等等。
+  - 應該包含聯系信息對應的個人、團體或組織的名稱。
+- `<figure>`
+  - 常會把 `<img>` 放在裡面
+  - 可搭配 `<figcaption>`，可把圖片說明放在 `<figcaption>` 裡面，
+  - 有用 `<figcaption>` 的話，可以省去 `<img>` 裡的 `alt` 屬性。
+
+---
+
+### SEO
+
+SEO 是 **S**earch **E**ngine **O**ptimization，即優化自己的網站讓搜尋引擎更容易找到。
+
+[Google Search Console](https://search.google.com/search-console/about) 是 Google 開發的一個面向網站管理員的免費工具。網站管理員可以通過該工具了解自己網站的收錄情況並優化其網站的曝光率。
+
+一般常用以下幾種方式 SEO
+
+- OG：讓 facebook 搜尋到並成為 FB 中的物件
+- JSON-LD：讓 Google 搜尋到並在它的搜尋頁面呈現預覽資訊
+- robots.txt：給爬蟲看的檔案
+- sitemap.xml
+
+#### OG
+
+_(**O**pen **G**raph Protocol)_
+
+Open Graph Protocol 是 facebook 常用的 SEO 協議，其他很多網站也會使用，以 HTML 的 `<meta>` 標籤定義，包含：
+
+```htmlmixed
+<meta property="og:title" content="你的標題" />
+<meta property="og:type" content="分類" />
+<meta property="og:url" content="你的網址" />
+<meta property="og:image" content="你想顯示的圖片" />
+<meta property="og:description" content="描述" />
+```
+
+#### JSON-LD
+
+_(**J**ava**S**cript **O**bject **N**otation for **L**inked **D**ata)_
+
+網頁若有 JSON-LD 格式的資料，則 Google 搜尋引擎可讀懂網頁中的結構化資料，並針對不同的網頁型態呈現出相應的搜尋結果。
+
+##### 基本格式
+
+```html
+<script type="application/ld+json">
+  {
+    /* your structured data */
+  }
+</script>
+```
+
+##### 範例
+
+```html
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://google.com/article"
+    },
+    "headline": "Article headline",
+    "image": [
+      "https://example.com/photos/1x1/photo.jpg",
+      "https://example.com/photos/4x3/photo.jpg",
+      "https://example.com/photos/16x9/photo.jpg"
+    ],
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Google",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://google.com/logo.jpg"
+      }
+    },
+    "description": "A most wonderful article"
+  }
+</script>
+```
+
+#### robots.txt
+
+在搜尋引擎檢索網站時，告訴它網站哪些內容可以被檢索，哪些內容可以不用被檢索。
+
+#### Sitemap.xml
+
+可被理解成網站地圖，除了能讓使用者可以一目了然網站有哪些內容外，也是讓搜爬蜘蛛知道你的網站結構。
+
+#### 短評
+
+其實 SEO 的部分真的很不熟，目前我自己個網站 SEO 也還沒做好，之後會找機會想辦法加強這一塊，不然用 Google 都找不到自己網站，心寒~~
+
+---
+
+## 結語
+
+HTML 的內容算是滿基本也滿收的了，裡面較不熟的部分就是 SEO，但那也已經獨立成一門學問，其他部分有些是少用如果要用的就得查一下，但基本都知道怎麼使用。
+
+這篇的參考資料
+
+- [interneting is hard](https://www.internetingishard.com/)
+- [HTML Sematic Tags: Should I Bother With Semantic HTML? | Jungle Disk Blog](https://www.jungledisk.com/blog/2017/12/04/should-i-bother-with-semantic-html/)
+- [MDN Semantics](https://developer.mozilla.org/en-US/docs/Glossary/Semantics)
+- [New Semantic Elements in HTML5](https://www.w3schools.com/html/html5_semantic_elements.asp)
+- [使用 JSON-LD 處理 SEO，並讓 Google 針對不同形式網站做獨特的搜尋結果呈現](https://medium.com/@z3388638/%E4%BD%BF%E7%94%A8-json-ld-%E8%99%95%E7%90%86-seo-%E4%B8%A6%E8%AE%93-google-%E9%87%9D%E5%B0%8D%E4%B8%8D%E5%90%8C%E5%BD%A2%E5%BC%8F%E7%B6%B2%E7%AB%99%E5%81%9A%E7%8D%A8%E7%89%B9%E7%9A%84%E6%90%9C%E5%B0%8B%E7%B5%90%E6%9E%9C%E5%91%88%E7%8F%BE-9c74783c017a)
+- [Google Search - Search for Developers](https://developers.google.com/search/docs/data-types/article)
+- [Google 複合式搜尋結果測試](https://search.google.com/test/rich-results?utm_campaign=sdtt&utm_medium=message)

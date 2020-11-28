@@ -1,6 +1,7 @@
 require(`dotenv`).config();
 const { toSlug } = require("@reflexjs/gatsby-helpers");
 const emoji = require("remark-emoji");
+const a11yEmoji = require("@fec/remark-a11y-emoji");
 
 module.exports = {
   pathPrefix: "",
@@ -59,7 +60,7 @@ module.exports = {
         contentPath: `content/pages`,
         imagesPath: `content/images`,
         basePath: ``,
-        mdxRemarkPlugins: [emoji],
+        mdxRemarkPlugins: [emoji, a11yEmoji],
         gatsbyRemarkPlugins: [],
         remarkPlugins: [],
       },

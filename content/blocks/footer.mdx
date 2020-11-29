@@ -1,7 +1,7 @@
-import { useSiteMetadata } from "@reflexjs/gatsby-theme-core"
+import { useSiteMetadata } from "@reflexjs/gatsby-theme-core";
 
 export const FooterBlock = () => {
-  const { title, mail } = useSiteMetadata()
+  const { title, mail } = useSiteMetadata();
   return (
     <Section py={[8, 10, 12]}>
       <Container>
@@ -11,12 +11,12 @@ export const FooterBlock = () => {
           justifyContent="space-between"
         >
           <Div>
-          <H2 m="0" fontSize="xl|2xl|3xl">
-            {title}
-          </H2>
-          <A href="mailto:crowley3141@hotmail.com" m="0" fontSize="sm">
-            crowley3141@hotmail.com
-          </A>
+            <H2 m="0" fontSize="xl|2xl|3xl">
+              {title}
+            </H2>
+            <A href="mailto:crowley3141@hotmail.com" m="0" fontSize="sm">
+              crowley3141@hotmail.com
+            </A>
           </Div>
           <Grid col="4" gap="4" mt={[4, 0]}>
             <A href="https://github.com/YSKuo" color="text">
@@ -43,22 +43,27 @@ export const FooterBlock = () => {
           pt={[4, 5, 6]}
           mt={[4, 5, 6]}
         >
-        <Flexbox
-          flexDirection={["column", "row"]}
-          alignItems={["center"]}
-          justifyContent="space-between"
-        >
-          <P fontSize="sm" mt="0">
-            © {
-              new Date().getFullYear() === 2020 ? new Date().getFullYear() : `2020 - ${new Date().getFullYear()}`
-            } Made by {title}
-          </P>
-          {null && <P fontSize="sm" mt="0">
-            Download <A href="#">Resume</A>
-          </P>}
-        </Flexbox>
+          <Flexbox
+            flexDirection={["column", "row"]}
+            alignItems={["center"]}
+            justifyContent="space-between"
+          >
+            <P fontSize="sm" mt="0">
+              ©{" "}
+              {new Date().getFullYear() === 2020
+                ? new Date().getFullYear()
+                : `2020 - ${new Date().getFullYear()}`}{" "}
+              Made by {title}
+            </P>
+            <P fontSize="sm" mt="0">
+              Download{" "}
+              <A href="https://drive.google.com/file/d/13v5HzcTZ9dCpSUYBmlqhGPw6gCe1x93Z/view">
+                Resume
+              </A>
+            </P>
+          </Flexbox>
         </Div>
       </Container>
     </Section>
-  )
-}
+  );
+};

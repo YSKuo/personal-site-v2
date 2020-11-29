@@ -8,7 +8,6 @@ module.exports = {
   siteMetadata: {
     title: "Arsene Kuo",
     description: "Arsene's Personal Website.",
-    mail: "crowley3141@hotmail.com",
     siteUrl: process.env.SITE_URL || "http://localhost:8000",
   },
   plugins: [

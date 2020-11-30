@@ -1,35 +1,43 @@
 # Personal Website
 
-## 待解決問題
+Link: https://arsenekuo.tw/
 
-### 短期
+This is my personal website, I build it to share my thoughts and introduce myself.
 
-- resume
-- contact
-- vedio
-- 圖片大小優化
-- md 轉 mdx 的問題
-  - 連結要帶 target="\_blank" 另開分頁
-  - 分隔線
-  - 圖片置中
-- about 新增
-  - fun facts
-  - collection
-- blog 頁面的 title
-- footer 連結要另開分頁
-- SEO
-- RSS
-- Google Analytics
-  - gatsby 似乎尚未支援新版 GA [gatsby-plugin-google-analytics doesn't seem to work with newer GA 4 properties · Issue #28155 · gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby/issues/28155)
+## Feature and Screenshot
 
-### 長期
+### Home page
 
-- testimonials
-- siteMetaData
-  - 參考 [gatsby\_为 Gatsby 网站元数据创建自定义 React 挂钩\_cumifi2519 的博客-CSDN 博客](https://blog.csdn.net/cumifi2519/article/details/108155181)
-  - [Creating a Custom React Hook for Gatsby Site Metadata · Scott Spence](https://scottspence.com/2019/03/24/custom-gatsby-metadata-hook/)
-- side nav bar
-- projects page
-- blog tags 分頁
-- header
-  - 參考 [向上捲動時，讓 header 出現；向下捲動時，讓 header 消失。](https://chiayilai.com/%E5%90%91%E4%B8%8A%E6%8D%B2%E5%8B%95%E6%99%82%EF%BC%8C%E8%AE%93%E4%B8%BB%E9%81%B8%E5%96%AE%E5%87%BA%E7%8F%BE%E5%9B%BA%E5%AE%9A%E5%9C%A8%E8%A6%96%E7%AA%97%E4%B8%8A%E6%96%B9/)
+![](https://i.imgur.com/7BLzVdz.png)
+
+![](https://i.imgur.com/StiCHJA.png)
+
+### About page
+
+![](https://media.giphy.com/media/EhEBJLKvvDCVZPENqF/giphy.gif)
+
+### Blog page
+
+![](https://i.imgur.com/Np5Resx.png)
+
+#### Post
+
+![](https://media.giphy.com/media/LjX6hkX4j6RRt1f43n/giphy.gif)
+
+#### Disqus plugin
+
+I also add Disqus plugin to enable people make comments on my post.
+
+![](https://i.imgur.com/9csvBn8.png)
+
+## Tools
+
+- React
+- Gatsby
+- Reflex
+- Disqus
+
+## Version
+
+- 1.0 - 2020.11.21
+  - release

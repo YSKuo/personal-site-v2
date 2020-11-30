@@ -29,7 +29,11 @@ export const PostTeaser = ({
   ...props
 }) => (
   <Article {...props}>
-    <Grid col="1|1|350px 1fr|400px 1fr" gap="4|4|10" alignItems="flex-start">
+    <Grid
+      col="1|1|1|350px 1fr|400px 1fr"
+      gap="4|4|4|10"
+      alignItems="flex-start"
+    >
       {image && (
         <Link href={slug} d="block">
           <Image

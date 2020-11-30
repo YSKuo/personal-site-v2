@@ -1,18 +1,22 @@
-import { useSiteMetadata, useColorMode } from "@reflexjs/gatsby-theme-core"
+import { useSiteMetadata, useColorMode } from "@reflexjs/gatsby-theme-core";
 
 export const HeaderBlock = ({ ...props }) => {
-  const [showMenu, setShowMenu] = React.useState(false)
-  const navName = "header"
+  const [showMenu, setShowMenu] = React.useState(false);
+  const navName = "header";
   return (
     <Header
-      position={["sticky", "relative"]}
+      position={["sticky", "sticky", "relative"]}
       top="0"
       bg="background"
       zIndex="1000"
       {...props}
     >
       <Container>
-        <Flexbox d={["none", "flex"]} justifyContent="space-between" py="1">
+        <Flexbox
+          d={["none", "none", "flex"]}
+          justifyContent="space-between"
+          py="1"
+        >
           <Branding />
           <NavMenu
             name={navName}
@@ -24,7 +28,7 @@ export const HeaderBlock = ({ ...props }) => {
         </Flexbox>
       </Container>
       <Flexbox
-        d={["flex", "none"]}
+        d={["flex", "flex", "none"]}
         flexDirection="column"
         justifyContent="center"
       >
@@ -78,20 +82,20 @@ export const HeaderBlock = ({ ...props }) => {
         </Div>
       </Flexbox>
     </Header>
-  )
-}
+  );
+};
 
 export const Branding = () => {
-  const { title } = useSiteMetadata()
+  const { title } = useSiteMetadata();
   return (
     <A href="/" fontSize="3xl" fontWeight="semibold" color="text">
       {title}
     </A>
-  )
-}
+  );
+};
 
 export const ModeToggle = ({ ...props }) => {
-  const [colorMode, setColorMode] = useColorMode()
+  const [colorMode, setColorMode] = useColorMode();
   return (
     <Button
       variant="icon"
@@ -104,5 +108,5 @@ export const ModeToggle = ({ ...props }) => {
       <Icon name={colorMode === "default" ? "sun" : "moon"} size="5" />
       <VisuallyHidden>Toggle mode</VisuallyHidden>
     </Button>
-  )
-}
+  );
+};

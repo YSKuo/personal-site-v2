@@ -1,7 +1,5 @@
 # Personal Website
 
-Link: https://arsenekuo.tw/
-
 This is my personal website, I build it to share my thoughts and introduce myself.
 
 ## Feature and Screenshot
